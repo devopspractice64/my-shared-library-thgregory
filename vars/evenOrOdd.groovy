@@ -4,8 +4,9 @@ def call(int buildNumber) {
         stages {
             stage('Checkout') {
                 steps {
+                    println 'Morning'
                     git url: 'https://github.com/tkgregory/legacy-repo.git'
-                    sh 'ls'
+                    println "Hi"
                 }
             }
             stage('Even Stage') {
