@@ -4,9 +4,10 @@ def call(int buildNumber) {
         stages {
             stage('Checkout') {
                 steps {
-                    println 'Morning'
                     git url: 'https://github.com/tkgregory/legacy-repo.git'
                     sh 'ls'
+                    def commno = load('common.groovy')
+                    common.doSomething()
                 }
             }
             stage('Even Stage') {
