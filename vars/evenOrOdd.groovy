@@ -4,8 +4,8 @@ def call(int buildNumber) {
         stage('Checkout') {
             git url: 'https://github.com/tkgregory/legacy-repo.git'
             sh 'ls'
-            def common = load('common.groovy')
-            common.doSomething()
+            def mystuff = load('./common.groovy')
+            mystuff.doSomething()
         }
         stage('Even Stage') {
             echo "The build number is even"
