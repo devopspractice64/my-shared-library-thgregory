@@ -1,23 +1,13 @@
 def call(int buildNumber) {
-    if (buildNumber % 2 == 0) {
-        pipeline {
-            agent any
-            stages {
-                stage('Even Stage') {
-                    steps {
-                        echo "The build number is even"
-                    }
-                }
+    pipeline {
+        agent any
+        stages {
+            stage('Checkout') {
+                git url: 'https://github.com/tkgregory/legacy-repo.git'
             }
-        }
-    } else {
-        pipeline {
-            agent any
-            stages {
-                stage('Odd Stage') {
-                    steps {
-                        echo "The build number is odd"
-                    }
+            stage('Even Stage') {
+                steps {
+                    echo "The build number is even"
                 }
             }
         }
