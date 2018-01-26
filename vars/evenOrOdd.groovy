@@ -1,5 +1,6 @@
 def call(int buildNumber) {
-    stages {
+
+    node {
         stage('Checkout') {
             git url: 'https://github.com/tkgregory/legacy-repo.git'
             sh 'ls'
@@ -11,4 +12,5 @@ def call(int buildNumber) {
 
         }
     }
+
 }
