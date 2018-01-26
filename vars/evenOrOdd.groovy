@@ -1,5 +1,4 @@
 def call(int buildNumber) {
-    agent any
     stages {
         stage('Checkout') {
             git url: 'https://github.com/tkgregory/legacy-repo.git'
