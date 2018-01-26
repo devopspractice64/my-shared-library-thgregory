@@ -6,7 +6,7 @@ def call(int buildNumber) {
                 steps {
                     git url: 'https://github.com/tkgregory/legacy-repo.git'
                     sh 'ls'
-                    def commno = load('common.groovy')
+                    def common = load('common.groovy')
                     common.doSomething()
                 }
             }
