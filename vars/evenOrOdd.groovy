@@ -5,6 +5,7 @@ def call(int buildNumber) {
             stage('Checkout') {
                 steps {
                     git url: 'https://github.com/tkgregory/legacy-repo.git'
+                    sh 'ls'
                 }
             }
             stage('Even Stage') {
