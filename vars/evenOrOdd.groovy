@@ -1,20 +1,15 @@
 def call(int buildNumber) {
-    pipeline {
-        agent any
-        stages {
-            stage('Checkout') {
-                steps {
-                    git url: 'https://github.com/tkgregory/legacy-repo.git'
-                    sh 'ls'
-                    def common = load('common.groovy')
-                    common.doSomething()
-                }
-            }
-            stage('Even Stage') {
-                steps {
-                    echo "The build number is even"
-                }
-            }
+    agent any
+    stages {
+        stage('Checkout') {
+            git url: 'https://github.com/tkgregory/legacy-repo.git'
+            sh 'ls'
+            def common = load('common.groovy')
+            common.doSomething()
+        }
+        stage('Even Stage') {
+            echo "The build number is even"
+
         }
     }
 }
