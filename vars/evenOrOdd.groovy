@@ -2,7 +2,7 @@ def call(int buildNumber) {
 
     node {
         stage('Set vars') {
-            binding.setVariable('Global', 'hahaha')
+            Global = 'ding dong'
         }
         stage('Checkout') {
             git url: 'https://github.com/tkgregory/legacy-repo.git'
