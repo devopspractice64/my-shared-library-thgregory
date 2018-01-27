@@ -1,10 +1,12 @@
+@groovy.transform.Field
+        Global = 'bob'
+
 def call(int buildNumber) {
 
     node {
-        stage('Set vars') {
-            @groovy.transform.Field
-                    Global = 'bob'
-        }
+//        stage('Set vars') {
+//
+//        }
         stage('Checkout') {
             git url: 'https://github.com/tkgregory/legacy-repo.git'
             sh 'ls'
