@@ -1,6 +1,3 @@
-@groovy.transform.Field
-        Global = 'bob'
-
 def call(int buildNumber) {
 
     node {
