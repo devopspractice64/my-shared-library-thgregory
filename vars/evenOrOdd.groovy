@@ -8,6 +8,7 @@ def call(int buildNumber) {
             git url: 'https://github.com/tkgregory/legacy-repo.git'
             sh 'ls'
             def mystuff = load('./common.groovy')
+            mystuff.setBinding(binding)
             mystuff.doSomething()
         }
         stage('Even Stage') {
